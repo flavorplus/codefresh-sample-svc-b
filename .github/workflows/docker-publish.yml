@@ -105,7 +105,7 @@ jobs:
           VERSION="${{ steps.vars.outputs.version }}"
           yq e -i ".version = \"$VERSION\"" environments/development/vote/Chart.yaml
           yq e -i ".appVersion = \"$VERSION\"" environments/development/vote/Chart.yaml
-          yq e -i ".result.image.tag = \"$VERSION\"" environments/development/vote/values.yaml
+          yq e -i ".vote.image.tag = \"$VERSION\"" environments/development/vote/values.yaml
 
       - name: Commit and push changes
         run: |
